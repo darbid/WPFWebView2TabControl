@@ -46,6 +46,11 @@ namespace WPFWebView2TabControl
             btivm.BrowserTabNewWindowRequestedEvent += Btivm_BrowserTabNewWindowRequestedEvent;
             TabCollection.Add(btivm);
             BrowserTabControlSelectedIndex = 0;
+
+            BrowserTabItemViewModel btivm1 = new();
+            btivm1.Source = new Uri(@"https://microsoft.com");
+            btivm1.BrowserTabNewWindowRequestedEvent += Btivm_BrowserTabNewWindowRequestedEvent;
+            TabCollection.Add(btivm1);
         }
 
         private void Btivm_BrowserTabNewWindowRequestedEvent(Microsoft.Web.WebView2.Core.CoreWebView2NewWindowRequestedEventArgs e)
