@@ -29,6 +29,10 @@ namespace WPFWebView2TabControl
 
         private void BrowserTabItemUC_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
+            if (e.NewValue == null)
+            {
+                this.WebView.DataContext = null;
+            }
             btivm = (BrowserTabItemViewModel)this.DataContext;
         }
 
